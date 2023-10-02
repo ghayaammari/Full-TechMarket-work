@@ -1,0 +1,25 @@
+<div class="boutique-form">
+  <form>
+    <h1>Paramètres du <span style="color: blueviolet;">boutique</span></h1>
+    <!-- <div class="mb-3">
+      <input class="form-control" type="file" id="imageBoutique" name="imageBoutique" (change)="onImageSelect($event)" accept="image/*" required>
+    </div>
+    <div *ngIf="boutique.image">
+      <img [src]="boutique.image" alt="Image de boutique">
+    </div> -->
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="nomBoutique">Nom de boutique </label>
+      <input class="form-control" type="text" id="nomBoutique" name="nomBoutique"  required [(ngModel)]="nomcom">
+    </div>
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="urlSite">URL du site :</label>
+      <input class="form-control" type="text" id="urlSite" name="urlSite" [(ngModel)]="url"  required>
+    </div>
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="localisation">Localisation :</label>
+      <input class="form-control" type="text" id="localisation" name="localisation"  [(ngModel)]="local" required>
+    </div>
+    <button type="button" (click)="modifierParametres()">Modifier paramètres boutique</button>
+   
+  </form>
+</div>

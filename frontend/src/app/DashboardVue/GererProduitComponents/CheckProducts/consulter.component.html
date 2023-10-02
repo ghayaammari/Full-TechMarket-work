@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="table-responsive">
+
+     <table class="table table-striped">
+       <tr>
+         <th>category</th>
+         <th>Nom</th>
+         <th>Prix</th>
+         <th>Description</th>
+         <th>URL</th>
+         <th>Image</th> 
+       </tr>
+       <tbody>
+        
+          <tr *ngFor="let product of gettetdata"  >
+           <td>{{ product.category}}</td>
+           <td>{{ product.name}}</td>
+           <td>{{ product.price}}</td>
+           <td>{{ product.description }}</td>
+
+           <td>
+            {{ product.urls }}
+           </td>
+
+           <td>
+             <img [src]="product.imageUrl" alt="{{ product?.name}}" class="img-thumbnail" style="max-width: 100px;">
+           </td>
+
+           
+
+           <td><a class="btn btn-danger" (click)="deleteProduct(product)">Delete</a></td>
+           <td><a class="btn btn-success"  (click)="handleUpdateClick(product)">Update</a></td>
+         </tr>
+         
+       </tbody>
+     </table>
+   </div>
+ </div>

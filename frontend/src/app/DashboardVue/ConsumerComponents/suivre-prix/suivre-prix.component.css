@@ -1,0 +1,21 @@
+.suivrePrixHeader{
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  /* border: 1px solid rgba(128, 128, 128, 0.26) ;   */
+  /* gap: 8rem;  */
+  justify-content: space-between; 
+  /* flex-wrap: wrap;  */
+  padding: 0.5rem;
+  border-radius: 5px;
+
+}
+
+.cardinfo{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8rem;
+  /* flex-wrap: wrap; */
+
+}

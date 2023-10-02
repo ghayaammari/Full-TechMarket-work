@@ -1,0 +1,74 @@
+<header  class="headertop">
+  
+  <!-- <div > -->
+    <div style="display: flex; align-items: center; flex-direction: row; gap: 8px; cursor: pointer;" routerLink="/">
+      <img src="../../../assets/images/techmarket.png" alt="TechMarket" style="height: 50px; width: 50px;">
+      <div style="display: flex; align-items: center; flex-direction: row;">
+        <span class="logo" style="color: #533280;">Tech</span>
+        <span class="logo" style=" color: #7293f8;">Market</span>
+      </div>
+      
+    </div>
+    <div *ngIf="consumer || !connected" class="navlinks" style="" (click)="GoToMesNotification()">
+        <mat-icon>notifications_active</mat-icon>
+        <span>Alert Prix</span>
+    </div>
+    <!-- *ngIf="consumer || !connected" -->
+    <div  class="search-box">
+      <div mat-button [matMenuTriggerFor]="categoriesMenu" style="display: flex; flex-direction: row; background-color: #533280; ; height: 100%;  align-items: center; padding-left: 1rem; padding-right: 1rem;
+      ">
+        <span style="color: #fff;">Categories</span>
+        <mat-icon  style="color: #fff">arrow_drop_down</mat-icon>
+      </div>
+      <input type="text" placeholder="Chercher un produit "  (input)="Search()">
+      <mat-icon style="margin-right: 5px;" >search</mat-icon>
+      <!-- style="height: 100%; width: auto; background-color: gray;" -->
+    </div>
+    <div *ngIf="consumer || !connected" (click)="GoToMaSelection()" class="navlinks" >
+      <!-- style="color: #533280 ;align-items: center; display: flex; flex-direction: row; gap: 8px;" -->
+        <mat-icon>favorite</mat-icon>
+        Ma sélection
+    </div>
+    <div mat-icon-button *ngIf="!connected" routerLink="/ConnexionUser" class="navlinks" >
+      <!-- style="display:  flex; flex-direction:  row; align-items: center; color: #533280;" -->
+        <!-- <a mat-button  class="conn"> -->
+          <mat-icon>person</mat-icon>
+          <span >Connexion</span>
+        <!-- </a> -->
+    </div>
+    <!-- userdropdown -->
+    <!-- <div > -->
+      <!-- <a mat-button  class="conn"> -->
+        <!-- <mat-icon></mat-icon> -->
+        <button mat-icon-button *ngIf="connected" [matMenuTriggerFor]="userdropdown" >
+          <mat-icon  style=" color: #533280;" >person</mat-icon>
+        </button>
+        <!-- <span > {{name}} </span>
+        <mat-icon   >arrow_drop_down</mat-icon> -->
+      <!-- </a> -->
+  <!-- </div> -->
+
+      
+  <!-- </div> -->
+  <!-- <div class="headerbottom"> </div> -->
+  
+
+</header>
+
+<mat-menu #categoriesMenu="matMenu">
+  <button mat-menu-item>TV</button>
+  <button mat-menu-item>Smartphones</button>
+  <button mat-menu-item>PC</button>
+</mat-menu>
+<mat-menu #userdropdown="matMenu">
+  <button mat-menu-item>Parametre de compte</button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>Notifications</button>
+  <button mat-menu-item>Ma selection</button>
+</mat-menu>
+  <!-- <div >
+        <a style="color: #fff; text-decoration: none;" routerLink="/filter">
+              <mat-icon>local_offer</mat-icon>
+              Bon plan
+            </a>
+      </div> -->

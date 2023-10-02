@@ -1,0 +1,34 @@
+/* .page{
+  background-color: #F4F5F9;
+} */
+.rating{
+  display:flex; gap: 5px; flex-direction: column;
+}
+.ratecontainer{
+  width: 400px; height: 10px; border-radius: 5px; background-color: rgba(180, 206, 209, 0.466);
+}
+.rate{
+  display: block;  border-radius: 5px;  height: 100%;background-color: #FFC107;
+}
+
+ngb-rating{
+  color: #FFC107;
+  font-size: 40px;
+
+}
+
+.avisbtn{
+  display: flex;
+   flex-direction: row; cursor: pointer; align-items: center; border-radius: 5px ; padding: 5px 5px;  gap: 2rem;
+}
+.avisbtn:hover{
+  
+    /* background-color: rgba(128, 128, 128, 0.185); */
+    border: 1px solid rgba(128, 128, 128, 0.623);
+    
+
+}
+
+a {
+  text-decoration: none;
+}

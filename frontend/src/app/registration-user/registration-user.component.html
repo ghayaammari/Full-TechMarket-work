@@ -1,0 +1,38 @@
+<div class="body" >
+  <div class="containerbd">
+   <div class="sign-in">
+     <form  [formGroup]="RegistrationForm" (ngSubmit)="validertous()">
+       <p class="title">Se connecter</p>
+       <input placeholder="FullName" class="input" name="text" type="text" formControlName="nom" required [(ngModel)] = "user.name">
+       <input placeholder="Email" class="input" name="text" type="email" formControlName="email" required [(ngModel)] = "user.email">
+       <input placeholder="phone" class="input" name="text" type="text" formControlName="phone" required [(ngModel)] = "user.phone">
+       <input placeholder="password " class="input" name="text" type="password" formControlName="pwd" required [(ngModel)] = "user.password">
+       <div class="radio-buttons-container left-margin">
+        <div class="radio-button">
+          <input name="role" id="radio2" value="0" class="radio-button__input" type="radio" formControlName="role" required [(ngModel)] = "user.role">
+          <label for="radio2" class="radio-button__label">
+            <span class="radio-button__custom"></span>
+            Consumer
+          </label>
+        </div>
+        <div class="radio-button">
+          <input name="role" id="radio1" class="radio-button__input" type="radio" formControlName="role" value="1" [(ngModel)] = "user.role">
+          <label for="radio1" class="radio-button__label">
+            <span class="radio-button__custom"></span>
+            Seller
+          </label>
+        </div>
+        </div>
+       <button type="submit" (click)="register()">Create Account</button>
+     </form>
+     <p id="invisibleP">You Already Have Account ?</p>
+     
+     <button routerLink="/ConnexionUser" id="invisibleBTN">Connexion</button>
+   </div>
+   <div class="overlay-container">
+     <p class="title">Welcome To TeknoShop !</p>
+     <p class="sous-titre">You Already Have Account ?</p>
+     <button id="signUp" routerLink="/ConnexionUser">Connexion</button>
+   </div>
+ </div> 
+ </div>

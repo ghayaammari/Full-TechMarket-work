@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.danger{
+  color: red;
+}
+.body{
+  margin-top: 3rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: Inter;
+  font-style: normal;
+}
+.container{
+  position: relative;
+  width: 950px;
+  max-width: 100%;
+   min-height: 510px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow:visible;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+}
+.sign-in {
+  position: relative;
+  width: 50%;
+  /* top: 0;
+  left: 0; */
+  height: 100%;
+  /* z-index: 2; */
+}
+form{
+  margin: 2rem;
+  background-color: #fff;
+  color: #4B0AA6;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+
+
+
+.overlay-container {
+  position: relative;
+  /* top: 0;
+  right: 0; */
+  /* left: 50%; */
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
+
+ .overlay-right {
+  color: #fff;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px 25px;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #7293f8,  #533280);
+
+  /* transform: translateX(0); */
+  /* transition: transform 0.6s ease-in-out; */
+}
+
+
+.sign-in .title{
+  align-self: center;
+}
+.title{
+  font-size: 2.25rem;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  /* align-self: center; */
+}
+
+.overlay  .title{
+  margin-top: 35%;
+}
+
+
+
+.overlay button{
+  margin-top: 33px;
+  font-size: 1.5rem;
+}
+form button{
+  margin-top: 0.5rem;
+  padding: 12px 68px;
+  align-self: center;
+  /* align-self: center; */
+}
+
+button {
+  color: #fff;
+  background: #6d0ff2;
+  font-size: 1.25rem;
+
+  padding: 12px 68px;
+  border-radius: 20px;
+  border: 1px solid #6d0ff2;
+  letter-spacing: 1px;
+  /* text-transform: uppercase; */
+  /* transition: transform 80ms ease-in; */
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+#signUp {
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+
+/* ======================== Radio ================================ */
+
+.radio-button-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.radio-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-button__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-button__label {
+  display: inline-block;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 15px;
+  color: #4B0AA6;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.radio-button__custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  transition: all 0.3s ease;
+}
+
+.radio-button__input:checked + .radio-button__label .radio-button__custom {
+  background-color: #4c8bf5;
+  border-color: transparent;
+  transform: scale(0.8);
+  box-shadow: 0 0 20px #4c8bf580;
+}
+
+.radio-button__input:checked + .radio-button__label {
+  color: #4c8bf5;
+}
+
+.radio-button__label:hover .radio-button__custom {
+  transform: scale(1.2);
+  border-color: #4c8bf5;
+  box-shadow: 0 0 20px #4c8bf580;
+}
+
+
+/* ================================= Input ===================================== */
+
+input {
+  font-size: inherit;
+  color:#4B0AA6;
+  background-color: transparent;
+  width:400px;
+  /* max-width: 300px; */
+  height: 40px;
+  padding: 25px;
+  margin-top:15px;
+  border: 0.5px solid rgba(75 10 166 /30%);
+  border-radius: 5px;
+}
+
+input:focus {
+  color: #4B0AA6;
+  background-color: white;
+  outline:0.5px solid #4B0AA6;
+  transition: .1s;
+  transition-property: box-shadow;
+}
+input::placeholder{
+  color :#4B0AA6;
+}
+input:hover{
+  outline:0.5px solid #4B0AA6;
+}
+input type[password]{
+  background-color:green;
+}
+
+input[type="password"] {
+  position : raltive ;
+}
+
+@media all and (max-width=900px) {
+  .container{
+    flex-direction: row;
+  }
+}
+
+
+

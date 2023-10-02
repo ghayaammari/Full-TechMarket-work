@@ -1,0 +1,18 @@
+<div class="body" >
+  <div class="container">
+   <div class="sign-in">
+     <form  [formGroup]="ConnexionForm" (ngSubmit)="validertous()">
+      <p class="title invisible">Welcome Admin !</p>
+       <p class="title">Connexion</p>
+       <input placeholder="Email" class="input" name="text" type="email" formControlName="email" required>
+       <input placeholder="password" class="input" name="text" type="password" formControlName="pwd" required>
+       <button type="submit" (click)="submitCclicked()" >Connexion</button>
+       <a routerLink="/forgotPassword">Forgot password?</a>
+     </form>
+       </div>
+   <div class="overlay-container">
+     <p class="title">Welcome Admin !</p>
+   </div>
+ </div> 
+ </div>
+ 

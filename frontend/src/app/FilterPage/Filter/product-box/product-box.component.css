@@ -1,0 +1,273 @@
+.favorite{
+  position: absolute;
+  top: 0; 
+  right: 0;
+}
+.mycardcontainer{
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid rgba(128, 128, 128, 0.205);
+  width: auto;
+  height: auto;
+  margin: 1rem 1rem 0 0 ;
+}
+.mycardcontainer:hover{
+  
+  cursor: pointer;
+  
+  /* transform: translateY(-5px);  hedhi mba3ed raka7ha lel cards on col akahaw ama on rows lee */
+}
+.hover.mycardcontainer:hover{
+border: 1px solid rgba(128, 128, 128, 0.527);
+}
+.hover.mycardcontainer{
+  /* margin: 0px; */
+}
+
+.mycard-direction-col{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.mycard-direction-row{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  position: relative;
+  flex-wrap: wrap; 
+}
+.img-fav-container{
+  position: relative; 
+  /* display: flex; */
+  align-items: center;
+}
+.img{
+  height: 200px; 
+  width: 300px;
+  object-fit: cover;
+  
+}
+.imgmaselection{
+  height: 200px;
+  width: 230px;
+  object-fit: cover;
+}
+.mycard-direction-row .img{
+  height: 300px; 
+  width: 300px;
+  object-fit: cover;
+}
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+.card-content-flex-start{
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  /* border: 1px solid black; */
+  padding: 1rem;
+  gap: 1rem;
+}
+.card-content-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  /* border: 1px solid black; */
+}
+
+textarea{
+  /* width: 100%; */
+  height: 50px;
+  padding: 0.5rem;
+  outline: none;
+  resize: none;
+  font-size: inherit; 
+  border-radius: 5px;
+  border: 1px solid #17496c86;
+  max-height: 200px;
+  color: inherit;
+  position: relative;
+  background-color: transparent;
+  
+}
+
+/* 
+color: #17486C;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+*/
+textarea::-webkit-scrollbar{
+  display: none;
+}
+
+.Pname{
+  color: #6C4AB6;
+  /* color: #17486C; */
+  font-size:medium; 
+  font-weight:600;
+
+    max-width: 200px; /* Ajustez en fonction de votre mise en page */
+    line-height: 1.5;
+    /*  max-width: 400px;  Ajustez en fonction de votre mise en page */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+.Pprice{
+  color: #FF6600;
+  font-weight: bold; 
+  /* font-size: small; */
+}
+.mybtn{
+  padding:0.25rem 0.5rem ;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    /* font-size: 16px; */
+    /* font-weight: bold; */
+    transition: background-color 0.3s ease-in-out;
+    min-width: 150px;
+    background-color: #6C4AB6;
+    color: #fff;
+}
+
+/* flex-wrap: wrap;   */
+ngb-rating{
+  color: #FFC107;
+  font-size: 30px;
+
+}
+
+
+.vocontainer{
+  position: relative;
+}
+.voireoffrebtn{
+  width: 112px;
+  /* position: relative; */
+  display: flex; align-items: center; flex-direction: row; gap: 0.3rem; cursor: pointer;  background-color: #6C4AB6; color: white;
+  padding:8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* .displayicon{
+  display: none;
+} */
+/* .voireoffrebtn:hover .displayicon{
+  display: block;
+} */
+.voireoffrebtn:hover{
+  gap: 1rem;
+  width: 122px;
+}
+.avisbtn{
+  display: flex;
+   flex-direction: row; cursor: pointer; align-items: center; border-radius: 5px ; padding: 5px 5px;  
+   gap: 0.5rem;
+   width: 160px; 
+}
+.avisbtn:hover{
+  
+    background-color: rgba(128, 128, 128, 0.185);
+
+}
+.espace{
+  flex: 1 1 auto;
+}
+.favicon{
+  color: wheat;
+}
+.PAFavicon{
+  color: #e62929;
+}
+.ratingcontainer{
+  display: flex; align-items: center; flex-direction: row; gap: 1rem;
+}
+/* .avisbtncontainer{
+  width: 160px; 
+  display: flex; 
+  flex-direction: row; 
+  cursor: pointer; 
+  align-items: center; border-radius: 5px ; padding: 5px 5px;  gap: 0.5rem;
+} */
+.priceOwner{
+  display: flex ;
+  flex-direction: row;
+  align-items: center;
+  gap: 7rem;
+}
+.nomboutique{
+  color: #6C4AB6; 
+  font-weight:bold;
+}
+/* new  */
+.disponibilite{
+  display: flex; flex-direction: row; align-items: center; gap: 0.75rem;
+}
+.iconscontainer{
+  position: relative; display: flex; align-items: center; flex-direction: row; gap: 1rem; 
+}
+.boxicon{
+  height: 22px; width:22px; margin:5px;
+}
+.disponible{
+  fill:#13b616;
+}
+.indisponible{
+  fill:#e62929;
+}
+.tickicon{
+  position: absolute;
+  top: 0; 
+  right: 0;
+  height: 10px;
+  width: 10px;
+}
+.enstockt{
+  color: #13b616; font-weight: bold; 
+}
+.horsstockt{
+  color: #e62929; font-weight: bold;
+
+}
+
+.fontweight{
+  font-weight: bold; 
+}
+.menuitem{
+  padding: 8px 0 0 0 ;
+}
+@media (max-width:700px){
+.card-content-flex-start{
+
+    width: 100%;
+
+}
+.espace{
+  display: none;
+}
+}
+@media  (min-width: 700px)and (max-width: 800px){
+  .card-content-flex-start{
+  
+      width: 50%;
+  
+  }
+  }
+.enstock{
+  color: green;
+}
+.horstock{
+  color: red;
+}
+
+a {
+  text-decoration: none;
+}

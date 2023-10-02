@@ -1,0 +1,36 @@
+<div class="container my-selection-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="titlepage">
+        <h2 class="my-selection-title">Ma Sélection de Produits</h2>
+      </div>
+    </div>
+    <!-- <div class="col-md-12"> -->
+      <div class="row" >
+        <div class=" col-6 col-lg-4" *ngFor="let element of produitsSelectionnes">
+          <app-product-box   [dataresieved]="element"  [senderismaselection]="true"></app-product-box>
+        </div>
+        
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+<!-- <div class="my-selection-item">
+  <img class="my-selection-image" src="https://primini.tn/images/placeholder.jpg" alt=""      >
+  <div class="my-selection-info">
+    <h3 class="my-selection-name">
+      nom produit
+    </h3>
+    <p class="my-selection-description">
+      <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis fugit aut dignissimos, numquam impedit, obcaecati dicta magni nobis voluptatem suscipit illum. Eius at laudantium ullam, provident fugit corporis sequi maxime.</span>
+    </p>
+    <p class="my-selection-price">
+      1200DTN
+    </p>
+    <p class="my-selection-availability">
+      disponible
+    </p>
+  </div>
+  <button class="my-selection-btn" >
+    Supprimer</button>
+</div> -->

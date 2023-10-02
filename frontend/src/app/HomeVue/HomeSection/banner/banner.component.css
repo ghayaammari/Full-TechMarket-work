@@ -1,0 +1,11 @@
+.banner{
+    margin-top: 0px;
+    margin-left: -50px;
+    margin-right: 0px;
+}
+.carousel-caption h3{
+    margin-top: -50px;
+}
+img{
+    width: 100%;
+}

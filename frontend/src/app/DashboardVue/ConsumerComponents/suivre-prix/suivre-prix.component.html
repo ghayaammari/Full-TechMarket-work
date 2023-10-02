@@ -1,0 +1,36 @@
+
+<!-- chouf mes notifications mte3 primini bech nosta5dem el foramt edhika lel products  -->
+<!-- <div class="container my-selection-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="titlepage">
+        <h2 class="my-selection-title">Mes notifications des produits suivi </h2>
+      </div>
+    </div>
+      <div class="row" >
+        <div class=" col-6 col-lg-4" *ngFor="let element of produitsSelectionnes">
+          <app-product-box   [dataresieved]="element"  [senderismesnorifications]="true"></app-product-box>
+        </div>
+        
+      </div>
+  </div>
+</div> -->
+
+<div  class="suivrePrixHeader">
+  <div style="display: flex; flex-direction: row ; align-items: center; gap: 0.5rem;">
+    <span >Produit</span>
+  </div>
+    
+
+  <div class="cardinfo " >
+    <span>Prix actuelle </span>
+    <span>Prix attendu</span>
+    <span style="width: 30px;"></span>
+    
+  </div>
+
+
+</div>
+<ng-container *ngFor="let product of produitsSelectionnes">
+  <app-card-produitsimilaire [senderisNotifications]="true" [produitinfo]="product"></app-card-produitsimilaire>
+</ng-container>

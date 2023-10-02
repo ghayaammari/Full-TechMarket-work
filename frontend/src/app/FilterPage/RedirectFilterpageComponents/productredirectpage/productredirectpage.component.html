@@ -1,0 +1,63 @@
+
+<div class="page" style="display: flex; flex-direction: column; padding: 1rem ; gap: 1rem;">
+  <!-- <p>productredirectpage works! {{data.name}} categorie : {{data.category}} </p> -->
+  <app-product-box [senderisRedirectP]="true" [dataresieved]="data"></app-product-box>
+  <p>Produit similaire</p>
+  <ng-container  *ngFor="let produit of similairproduit ">
+    <app-card-produitsimilaire [produitinfo]="produit"></app-card-produitsimilaire>
+  </ng-container>
+  <!-- Rating affichage  -->
+  <ng-container  *ngIf="nbrofpeoplerated!=0 ">
+    <h1>Avis </h1>
+    <p>Faites-nous part de votre avis sur le produit ou consultez les avis des autres membres .</p> 
+    <div style="display: flex ; align-items: center; flex-direction: row; gap: 1rem;">
+        <ngb-rating [max]="5" [readonly]="true" [rate]="FinalRating"> </ngb-rating>
+            <!-- <span>{{FinalRating}} de ({{ratingcount}}) avis </span> -->
+            <span> {{FinalRating}}  ( {{nbrofpeoplerated}} ) </span>
+      </div>
+      <ol class="rating">
+        <li style="display: flex; flex-direction: row; align-items: center ; gap: 1rem;">
+          <span >1</span>
+          <div class="ratecontainer">
+            <span #one class="rate" ></span>
+          </div>
+          <span> {{ratesforone}} %</span>
+        </li>
+        <li style="display: flex; flex-direction: row; align-items: center ; gap: 1rem;">
+          <span>2</span>
+          <div class="ratecontainer">
+            <span #two class="rate" ></span>
+          </div>
+          <span> {{ratesfortwo}} %</span>
+        </li>
+        <li style="display: flex; flex-direction: row; align-items: center ; gap: 1rem;">
+          <span>3</span>
+          <div class="ratecontainer">
+            <span #three class="rate" ></span>
+          </div>
+          <span> {{ratesforthree}} %</span>
+        </li>
+        <li style="display: flex; flex-direction: row; align-items: center ; gap: 1rem;">
+          <span>4</span>
+          <div class="ratecontainer">
+            <span #four class="rate" ></span>
+          </div>
+          <span> {{ratesforfour}} %</span>
+        </li>
+        <li style="display: flex; flex-direction: row; align-items: center ; gap: 1rem;">
+          <span>5</span>
+          <div class="ratecontainer">
+            <span #five class="rate" ></span>
+          </div>
+          <span> {{ratesforfive}} %</span>
+        </li>
+        
+      </ol>
+      <div id="x" class="avisbtn"  style="width: 160px; display: flex; flex-direction: row; cursor: pointer; align-items: center; border-radius: 5px ; padding: 5px 5px;  gap: 0.5rem;" (click)="openAvis(data)">
+        <mat-icon>edit</mat-icon><span >donnez votre avis </span>
+       
+     </div>
+  </ng-container>
+  
+</div>
+

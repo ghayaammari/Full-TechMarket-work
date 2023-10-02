@@ -1,0 +1,117 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" #side  (click)="Filter()">
+    <!-- filters -->
+    <mat-card >
+      <div class="cardheader"  >
+        <p >Categorie</p>
+      </div>
+      <mat-card-actions  >
+        <section *ngFor="let element of categories ; let i = index">
+          <mat-checkbox  (click)="AfficherCategorieSelectionner(categories[i])">{{  element}}</mat-checkbox>
+        </section>
+      </mat-card-actions>
+    </mat-card>
+    
+    
+    <mat-card >
+      <div class="cardheader">
+        <p >Prix</p>
+      </div>
+      <mat-card-actions class="range">
+        <div >
+          <p >  min value:{{minval.value}}  </p>
+          <p>max value:{{maxval.value}}</p>
+        </div> 
+        <mat-slider (change)="AfficherMinMaxChangedValue(minval.value,maxval.value)"  [max]="this.max" [min]="this.min"  discrete="true">
+          <input  matSliderStartThumb #minval >
+          <input  matSliderEndThumb #maxval>
+        </mat-slider>
+      </mat-card-actions>
+    </mat-card>
+    
+    <mat-card >
+      <div class="cardheader">
+        <p >Disponibilite</p>
+      </div>
+      <mat-card-actions >
+      <!-- <section >
+        <mat-checkbox >En stock</mat-checkbox>
+        <mat-checkbox >Hors stock</mat-checkbox>
+      </section> -->
+      <mat-radio-group  aria-labelledby="example-radio-group-label" >
+        <mat-radio-button   value="En stock" (click)="AfficherDisponibilteSelectionner(true)">
+          En stock
+        </mat-radio-button>
+        <mat-radio-button  #dispop  value="Hors stock" (click)="AfficherDisponibilteSelectionner(false)">
+          Hors stock
+        </mat-radio-button>
+      </mat-radio-group>
+      </mat-card-actions>
+    </mat-card>
+    
+    <mat-card >
+      <div class="cardheader" >
+        <p >Marque</p>
+      </div>
+
+        <div *ngFor="let element of marquesAffichees ; let i = index">
+          <mat-checkbox  (click)="AfficherMarqueSelectionner(marquesAffichees[i])">{{  element}}</mat-checkbox>
+        </div>
+        <div style="align-self: center; color: #533280; cursor: pointer;" (click)="voirPlus()" *ngIf="indexMarqueActuel < marque.length" >
+          Voir plus
+        </div>
+        <!-- <div style="align-self: center; color: #533280; cursor: pointer;" (click)="voirMoins()" *ngIf="indexMarqueActuel >= marque.length" >
+          Voir moins
+        </div> -->
+        <!-- <button >Voir plus</button> -->
+
+    </mat-card>
+    <!-- <button (click)="Filter()">Filter</button> -->
+    
+   
+
+  </mat-drawer>
+  <mat-drawer-content  >
+    <div class="Hmargin" >
+        <div class="headerContainer" >
+              <button  mat-icon-button (click)="side.toggle()" > 
+              <mat-icon>
+                <svg  mat-icon fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M3 4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V7.17157C21 7.96722 20.6839 8.73028 20.1213 9.29289L15.2929 14.1213C15.1054 14.3089 15 14.5632 15 14.8284V18.4605C15 19.5026 14.3536 20.4354 13.3778 20.8013L10.3511 21.9363C10.044 22.0515 9.69998 22.0087 9.43041 21.8219C9.16083 21.6351 9 21.328 9 21V14.8284C9 14.5632 8.89464 14.3089 8.70711 14.1213L3.87868 9.29289C3.31607 8.73028 3 7.96722 3 7.17157V4ZM5 5V7.17157C5 7.43679 5.10536 7.69114 5.29289 7.87868L10.1213 12.7071C10.6839 13.2697 11 14.0328 11 14.8284V19.557L12.6756 18.9287C12.8707 18.8555 13 18.6689 13 18.4605V14.8284C13 14.0328 13.3161 13.2697 13.8787 12.7071L18.7071 7.87868C18.8946 7.69114 19 7.43679 19 7.17157V5H5Z" fill="black" fill-rule="evenodd"/></svg>
+              </mat-icon> 
+              
+            </button>
+          <span class="example-spacer"></span> 
+          <!-- Trie -->
+          <mat-card class="sort">
+            <div class="sortcontent"  >
+              <button mat-button [matMenuTriggerFor]="sortByMenu">
+                Trier de {{ sort }}
+                <mat-icon>expand_more</mat-icon>
+              </button>
+              <mat-menu #sortByMenu="matMenu">
+                <button (click)="onSortUpdated('asc')" mat-menu-item>moins cher au plus cher </button>
+                <button (click)="onSortUpdated('dsc')" mat-menu-item>plus cher au moin cher </button>
+              </mat-menu>
+            </div>
+          </mat-card> 
+          
+              
+            <mat-paginator class="matPh" [length]="productslength" [pageSize]="nbrofproducts"   [hidePageSize]="true" (page)="OnpageChangep($event)">
+            
+            </mat-paginator>
+
+        </div>
+
+          <div class="row" >
+            <!-- <button (click)="TestTheProductEInSelection()">test E</button> -->
+            <!-- <div class=" col-6 col-lg-4"*ngFor="let  element of dataslice" >
+                <app-product-box  [dataresieved]="element" [senderisfilter]="true" [ProductEMaSelection]="userhaveproductsinmaselection && userConnected && productExistInMaselection(element.id)" [ProductESuivrePrix]="userhaveproductsinsuivreprix && userConnected && productExistInSuivrePrix(element.id)"></app-product-box>           
+            </div> -->
+            <div class=" col-6 col-lg-4"*ngFor="let  element of dataslice" >
+              <app-product-box  [dataresieved]="element" [senderisfilter]="true" ></app-product-box>           
+          </div>
+          </div>
+
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

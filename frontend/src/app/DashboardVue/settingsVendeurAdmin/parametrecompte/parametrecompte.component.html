@@ -1,0 +1,42 @@
+<div class="form-container">
+              <form>
+                <h1>Account Settings</h1>
+                  
+                  <div class="form-group">
+                        <h3>Change Your Email Address</h3>
+                      <div class="input-button-container">  
+                      <input type="text" id="Email"  name="Email" required [(ngModel)] = "user.email" placeholder="email@gmail.com"  />    
+                      </div>
+                      <button class="update-button" (click)="Updatemail()">Update Email Address</button>
+                  
+                  </div>
+
+                  <hr>
+
+                  <div class="form-group">
+                      <h3>Update Your Personal Information</h3>
+                      <label for="prenom">Username</label>
+                      <input type="text" id="nom" [(ngModel)] = "user.name" name="username" required />
+                  </div>
+                  <div class="form-group">
+                    <div class="input-button-container">  
+                      <label for="prenom">Phone Number</label>
+                      <input type="text" id="telephone" [(ngModel)] = "user.phone" name="telephone" required />
+                    </div>
+                    <button class="update-button" (click)="UpdateInfos()">Update Personal Information</button>
+                    </div>
+                  <hr>
+                  <div class="form-group">
+                    <h3>Change Password</h3>
+                      <label for="motDePasse">New Password</label>
+                      <input type="text" id="motDePasse"  class="form-control" name="motDePasse" [(ngModel)] = "this.password" required placeholder="********" />
+                      <button class="update-button" (click)="Updatemdp()">Update Password</button>
+                    </div>
+                
+
+                  <!-- Boutons placés dans la même ligne -->
+                  <div class="buttons-container">
+                    <button class="delete-button" (click)="Delete()">Delete Account</button>
+                  </div>
+              </form>
+          </div>

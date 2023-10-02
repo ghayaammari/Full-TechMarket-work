@@ -1,0 +1,160 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<section class="bg-color">
+    
+    <br><br><br><br><br><br><br><br><br><br>
+    <div class="policy-product">  
+      <div class="container ">
+        <div class="title">
+            <p>Produits populaires</p>
+        </div>
+        <owl-carousel-o [options]="policyOptions">
+            <ng-template carouselSlide>
+                <div class="card">
+                    <div class="card-main">
+                    <div class="product-container">
+                        <div class="p" (mouseover)="changeImage($event)"><img src="../../../../assets/images/p1.png" alt="product"></div>
+                        <div class="p"(mouseover)="changeImage($event)"><img src="../../../../assets/images/p1.png" alt="product"></div>
+                        <div class="p"(mouseover)="changeImage($event)"><img src="../../../../assets/images/p1.png" alt="product"></div>
+                    </div>
+                    <div class="image">
+                        <img src="{{url}}" alt="image">
+                    </div>
+                    <div class="cart-line"></div>
+                    <div class="cart-item">
+                        <ul>
+                            <li><a href=""> <i class="fa fa-shopping-basket"></i></a></li>
+                            <li><a href=""> <i class="fa fa-heart"></i></a></li>
+                            <li><a href=""> <i class="fa fa-search"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="content">
+                    <a href="" class="see-more">see more <i class="fa fa-caret-right"></i>
+                    </a>
+                    <div class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o" ></i>
+                        <i class="fa fa-star-o" ></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p><span class="money"> De $81.00  jusqu'à $90.00    </span></p>
+                </div>
+                    
+                </div>
+            </ng-template>  
+            <ng-template carouselSlide>
+                <div class="card">
+                    <div class="card-main">
+                    <div class="product-container">
+                        <div class="p" (mouseover)="changeImage2($event)"><img src="../../../../assets/images/p1.png" alt="product"></div>
+                        <div class="p"(mouseover)="changeImage2($event)"><img src="../../../../assets/images/p1.png" alt="product"></div>
+                        <div class="p"(mouseover)="changeImage2($event)"><img src="../../../../assets/images/p1.png" alt="product"></div>
+                    </div>
+                    <div class="image">
+                        <img src="{{url2}}" alt="image">
+                    </div>
+                    <div class="cart-line"></div>
+                    <div class="cart-item">
+                        <ul>
+                            <li><a href=""> <i class="fa fa-shopping-basket"></i></a></li>
+                            <li><a href=""> <i class="fa fa-heart"></i></a></li>
+                            <li><a href=""> <i class="fa fa-search"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="content">
+                    <a href="" class="see-more">see more <i class="fa fa-caret-right"></i></a>
+                     <div class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o" ></i>
+                        <i class="fa fa-star-o" ></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p><span class="money">De $81.00  jusqu'à $90.00  </span></p>
+                </div>
+                    
+                </div>
+            </ng-template>  
+            <ng-template carouselSlide>
+                <div class="card">
+                    <div class="card-main">
+                    <div class="product-container">
+                        <div class="p" (mouseover)="changeImage3($event)"><img src="../../../../assets/images/p1.png" alt="product"></div>
+                        <div class="p"(mouseover)="changeImage3($event)"><img src="../../../../assets/images/p1.png" alt="product"></div>
+                        <div class="p"(mouseover)="changeImage3($event)"><img src="../../../../assets/images/p1.png" alt="product"></div>
+                    </div>
+                    <div class="image">
+                        <img src="{{url3}}" alt="image">
+                    </div>
+                    <div class="cart-line"></div>
+                    <div class="cart-item">
+                        <ul>
+                            <li><a href=""> <i class="fa fa-shopping-basket"></i></a></li>
+                            <li><a href=""> <i class="fa fa-heart"></i></a></li>
+                            <li><a href=""> <i class="fa fa-search"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="content">
+                    <a href="" class="see-more">see more <i class="fa fa-caret-right"></i></a>
+                    <div class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o" ></i>
+                        <i class="fa fa-star-o" ></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p><span class="money">De $81.00  jusqu'à $90.00 </span></p>
+                </div>
+                    
+                </div>
+            </ng-template>  
+            <ng-template carouselSlide>
+                <div class="card">
+                    <div class="card-main">
+                    <div class="product-container">
+                        <div class="p" (mouseover)="changeImage($event)"><img src="../../assets/phone.jpg" alt="product"></div>
+                        <div class="p"(mouseover)="changeImage($event)"><img src="../../assets/pc2.jpg" alt="product"></div>
+                        <div class="p"(mouseover)="changeImage($event)"><img src="../../assets/sm.jpg" alt="product"></div>
+                    </div>
+                    <div class="image">
+                        <img src="{{url}}" alt="image">
+                    </div>
+                    <div class="cart-line"></div>
+                    <div class="cart-item">
+                        <ul>
+                            <li><a href=""> <i class="fa fa-shopping-basket"></i></a></li>
+                            <li><a href=""> <i class="fa fa-heart"></i></a></li>
+                            <li><a href=""> <i class="fa fa-search"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="content">
+                    <a href="" class="see-more">see more <i class="fa fa-caret-right"></i>
+                    </a>
+                    <div class="rating">
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o" ></i>
+                        <i class="fa fa-star-o" ></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p><span class="money"> De $81.00  jusqu'à $90.00    </span></p>
+                </div>
+                    
+                </div>
+            </ng-template>  
+          </owl-carousel-o>
+    </div>
+</div>
+
+</section>
+
+

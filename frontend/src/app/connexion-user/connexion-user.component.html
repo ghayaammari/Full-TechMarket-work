@@ -1,0 +1,29 @@
+<div class="body" >
+ <div class="containerbd">
+  <div class="sign-in">
+    <form  [formGroup]="ConnexionForm" (ngSubmit)="validertous()">
+      <p class="title">Connexion</p>
+      <input placeholder="Email" class="input" name="text" type="email" formControlName="email" required [(ngModel)] = "userLogin.email">
+      <input placeholder="password " class="input" name="text" type="password" formControlName="pwd" required [(ngModel)] = "userLogin.password">
+      <button type="submit" (click)="Connexion()" >Connexion</button>
+      <a routerLink="/forgotPassword">Mot de passe oublié?</a>
+      <!-- Forgot password? -->
+    </form>
+    <p id="invisibleP">You Have not An Account ?</p>
+    
+    <button routerLink="/RegistrationUser" id="invisibleBTN">Créer un compte</button>
+    <!-- Create Account -->
+  </div>
+  <div class="overlay-container">
+    <p class="title">Bienvenue sur TechMarket </p>
+    <!-- Welcome To TeknoShop ! -->
+    <p class="sous-titre">Vous n'avez pas de compte ?</p>
+    <!-- You Have not An Account ? -->
+    <button id="signUp" routerLink="/RegistrationUser">Créer un compte</button>
+    <!-- Create Account -->
+  </div>
+</div> 
+</div>
+
+
+<!-- <app-footer></app-footer> -->

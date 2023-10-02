@@ -1,0 +1,50 @@
+<form  enctype="multipart/form-data">
+  <div class="form-row">
+    <div class="form-group col-md-13">
+      <label>Product Name</label>
+      <input type="text" class="form-control"  [(ngModel)]="productDTO.name" name="name" required>
+    </div>
+    <div class="form-group col-md-13">
+      <label>Product Price</label>
+      <input type="number" class="form-control" [(ngModel)]="productDTO.price" name="price" required>
+    </div>
+  </div>
+  <div class="form-group col-md-13">
+    <label>Category</label>
+    <select  name="category" class="form-control" aria-label="Default select example"  name="category" [(ngModel)]="productDTO.category" required>
+      <option value="home_appliance">home appliance</option>
+      <option value="Electronic">Electronic</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Product Description</label>
+    <div class="input-group">
+      <textarea class="form-control" aria-label="With textarea" [(ngModel)]="productDTO.description" name="description"  required></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Product URLs</label>
+    <div class="input-group">
+      <textarea class="form-control" aria-label="With textarea" [(ngModel)]="productDTO.urls" name="urls"  required></textarea>
+    </div>
+    <small class="form-text text-muted">Enter multiple URLs separated by commas.</small>
+  </div>
+  <div class="form-group mt-3">
+    <div class="input-group">
+      <div class="custom-file">
+        <input
+          type="file"
+          class="custom-file-input"
+          id="inputGroupFile01"
+          [(ngModel)]="productDTO.imageUrl"
+          name="imageUrl"
+          aria-describedby="inputGroupFileAddon01"
+          (change)="onFileSelected($event)"
+          [value]="productDTO.imageUrl"
+          required>
+        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+      </div>
+      <button type="submit" class="btn btn-success ml-2" (click) = "UpdateProduct()">Update Product</button>
+    </div>
+  </div>
+</form>

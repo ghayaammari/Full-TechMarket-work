@@ -1,0 +1,142 @@
+<div class="mycardcontainer" [ngClass]="{'hover' : thesender==1}">
+  <div [ngClass]="{'mycard-direction-col' : thesender==1 , 'mycard-direction-row' : thesender==2   }">
+    <!--  the image and the button popup -->
+    <div class="img-fav-container">
+      <!-- class="img" -->
+      <img  [ngClass]="{'imgmaselection':maselection , 'img':!maselection || !mesnotifications}" src="https://via.placeholder.com/150" [src]="dataresieved.imageUrl" alt="product img">
+      <!-- ma selection icon heart icon  -->
+      <div *ngIf="thesender==1 || thesender==2" class="favorite" >
+        <button  mat-icon-button color="primary" [matMenuTriggerFor]="beforeMenu">
+          <mat-icon  [ngClass]="{'favicon':!this.EFav , 'PAFavicon':this.EFav}"  >favorite</mat-icon>
+        </button>
+      </div>
+      <!-- delete product de ma selection icon  -->
+      <div *ngIf="maselection" class="favorite" (click)="supprimerdefav()" >
+        <button  mat-icon-button color="primary" >
+          <mat-icon style="color:blueviolet" >delete</mat-icon>
+        </button>
+      </div>
+      <!-- <mat-icon>more_vert</mat-icon> -->
+      <!-- matmenutriggerfor=deleteupdate -->
+      <!-- <div *ngIf="mesnotifications" class="favorite" >
+        <button  mat-icon-button color="primary"  [matMenuTriggerFor]="deleteupdateprce">
+          <mat-icon style="color:blueviolet" >more_vert</mat-icon>
+        </button>
+      </div> -->
+
+    </div>
+    <!-- the content of the cards  -->
+    <div   [ngClass]="{'card-content-center': thesender==1||maselection||mesnotifications,'card-content-flex-start':thesender==2}" >
+      <span class="Pname">{{dataresieved.name}}</span>
+      <!-- description  -->
+      <textarea  *ngIf="thesender==2 "disabled >
+        {{dataresieved.description}}
+      </textarea>
+      <div class="ratingcontainer"  *ngIf="thesender==2 && nbrofpeoplerated!=0" >
+        <ngb-rating  [max]="5" [readonly]="true" [rate]="FinalRating"> </ngb-rating>
+        <span> {{FinalRating}}  ( {{nbrofpeoplerated}} ) </span>
+      </div>
+      <!-- Donner avis popup -->
+      <div id="x" class="avisbtn avisbtncontainer" *ngIf="thesender==2 "  (click)="openAvis(dataresieved)">
+         <mat-icon>edit</mat-icon><span >donnez votre avis </span>
+        
+      </div>
+      <!-- prix produit et le boutique qui possede ce prix  -->
+      <div class="priceOwner" >
+        <span class="Pprice">{{dataresieved.price | currency:" " }} DT</span> 
+        <!-- <span *ngIf="thesender==2" class="espace" ></span> -->
+         <a class="nomboutique" *ngIf="thesender==2" [href]="dataresieved.urls" rel="noopener" target="_blank">{{dataresieved.nomFournisseur}}</a>
+      </div>
+      
+      <ng-container *ngIf=" thesender==2">
+        <!--En stock   -->
+    <div *ngIf="dataresieved.disponibilite" class="disponibilite ">
+      <div class="iconscontainer">
+          <svg class="boxicon disponible"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <path d="M248 0H208c-26.5 0-48 21.5-48 48V160c0 35.3 28.7 64 64 64H352c35.3 0 64-28.7 64-64V48c0-26.5-21.5-48-48-48H328V80c0 8.8-7.2 16-16 16H264c-8.8 0-16-7.2-16-16V0zM64 256c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H184v80c0 8.8-7.2 16-16 16H120c-8.8 0-16-7.2-16-16V256H64zM352 512H512c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H472v80c0 8.8-7.2 16-16 16H408c-8.8 0-16-7.2-16-16V256H352c-15 0-28.8 5.1-39.7 13.8c4.9 10.4 7.7 22 7.7 34.2V464c0 12.2-2.8 23.8-7.7 34.2C323.2 506.9 337 512 352 512z"/>
+          </svg>
+
+        <svg class="tickicon disponible"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 448 512">
+          <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
+        </svg>
+
+      </div>
+      
+      <span class="enstockt">En stock</span>
+    </div>
+<!-- hors stock  -->
+    <div *ngIf="!dataresieved.disponibilite" class="disponibilite ">
+      <div class="iconscontainer">
+          <svg class="boxicon indisponible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <path d="M248 0H208c-26.5 0-48 21.5-48 48V160c0 35.3 28.7 64 64 64H352c35.3 0 64-28.7 64-64V48c0-26.5-21.5-48-48-48H328V80c0 8.8-7.2 16-16 16H264c-8.8 0-16-7.2-16-16V0zM64 256c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H184v80c0 8.8-7.2 16-16 16H120c-8.8 0-16-7.2-16-16V256H64zM352 512H512c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H472v80c0 8.8-7.2 16-16 16H408c-8.8 0-16-7.2-16-16V256H352c-15 0-28.8 5.1-39.7 13.8c4.9 10.4 7.7 22 7.7 34.2V464c0 12.2-2.8 23.8-7.7 34.2C323.2 506.9 337 512 352 512z"/>
+          </svg>
+          <svg class="tickicon indisponible" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 384 512">
+            <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/>
+          </svg>
+
+      </div>
+      
+      <span  class="horsstockt">Hors stock</span>
+    </div>   
+      </ng-container>
+
+
+      
+
+      <button class="mybtn" *ngIf=" thesender==2 && (role=='vendeur' || role=='admin' )">Modifier Disponibilite </button>
+      <div class="vocontainer">
+        <a [href]="dataresieved.urls" *ngIf=" thesender==2"  rel="noopener" target="_blank" class="voireoffrebtn">
+        <span class="fontweight">voir l'offre</span><mat-icon class="">keyboard_arrow_right</mat-icon> 
+      </a>
+      </div>           
+      <button class="mybtn" *ngIf="thesender==1" (click)="gotoRedirectPage()">Comparer prix</button>
+      <button class="mybtn" *ngIf="maselection" (click)="gotoRedirectPage()">Voir plus de detaille</button>
+      
+      
+    </div>
+    <!-- <div *ngIf="!maselection">
+
+    </div> -->
+  </div>
+
+</div>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <div mat-menu-item  (click)="openDialog(dataresieved)" *ngIf="!ESuivrePrix">
+    <mat-icon >notifications_none</mat-icon>
+    <p class="menuitem" >alerte prix </p>
+  </div>
+  <div mat-menu-item  (click)="openDialog(dataresieved)" *ngIf="ESuivrePrix">
+    <mat-icon >edit</mat-icon>
+    <p class="menuitem" >modifier le prix attendu </p>
+  </div>
+  <div mat-menu-item  *ngIf="!this.EFav" (click)="ajouteraufav()" >
+    <mat-icon >add</mat-icon>
+    <p  class="menuitem">ajouter au favorite </p>
+    <!-- <p  class="menuitem" *ngIf="this.EFav">ajouter au favorite </p> -->
+  </div>
+  <div mat-menu-item  *ngIf="this.EFav"  (click)="supprimerdefav()">
+    <mat-icon >remove</mat-icon>
+    <p  class="menuitem" > Supprimer de favorit </p>
+    <!-- <p  class="menuitem" *ngIf="this.EFav">ajouter au favorite </p> -->
+  </div>
+</mat-menu>
+<mat-menu #deleteupdateprce="matMenu" xPosition="before">
+  <div mat-menu-item  (click)="openDialog(dataresieved)">
+    <mat-icon >edit</mat-icon>
+    <!-- lehne bech nzid fel data elli tet3adda  lel component alert de prix enno n3adi donner enno el data jeya mel mes notifications ou najem na3mel fazet enno fel ngOninit nselceti data w ataw nzid nchouf eneho a7sen  -->
+    <p class="menuitem" >Modifier prix attendu</p>
+  </div>
+  <div mat-menu-item  (click)="supprimerdefav()">
+    <mat-icon >remove</mat-icon>
+    <p  class="menuitem" > Supprimer le produit</p>
+    <!-- <p  class="menuitem" *ngIf="this.EFav">ajouter au favorite </p> -->
+  </div>
+</mat-menu>
+
+
+<!-- <mat-menu #deletemenu="matMenu" xPosition="before">
+  <div mat-menu-item  (click)="supprimerdefav()">
+    <mat-icon >remove</mat-icon>
+    <p  class="menuitem" > Supprimer produit de ma selection </p>
+  </div>
+</mat-menu> -->

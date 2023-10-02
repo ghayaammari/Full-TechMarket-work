@@ -1,0 +1,94 @@
+<mat-sidenav-container class="example-container" > 
+   <mat-sidenav   #side opened="true" mode="side">
+    <!-- <div class="side-top">
+      <mat-icon >person</mat-icon>
+      <span>Tekno</span><span>Shop</span>
+    </div> -->
+    <div class="profile-side-container">
+      <mat-icon >person</mat-icon>
+      <!-- <img class="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAAB3CAMAAAAO5y+4AAAAY1BMVEX///8jHyAAAAD7+/sgHB3p6ekcFxj39/eCgYEdGRoZExUQCQu4t7cVDxGgn58GAABMSkpbWlp3dnbv7+8yLzBFQ0NlY2MsKSpAPj/Pz89sa2uop6fa2trKycmHh4eUlJRSUVIkOVa8AAADyUlEQVRoge2a626jMBCFw8Q2YGPASbiTkPd/yjWbJqEJpB4YutKK70+lqtKR8VyPu9ttbGxsbPw/8CoOTJqlJogr/muijSkAlBRCSAVQmOY3pNsDA8m8J0wCO7Qrqx4PoIaiX9IKDsc1ZSNQb6I3FETryR7g/awP4LCSqp/BtGovnPlryB5L/VHW83S5wiX76dTVDi45pT9xnfwo63lJTS0bf77bxx3HtLKt/hDJA5imrSDmp5i6ow2l7NntK//90mdC3VQ464qUTrZ1P649MN0NX35O3SfqQqbrGMw3mKaSRX1mwg/duJSqJ0lDpBu4Ju8NHRDpGvcs6hFUpeOECSsbWCca2T0mi3rUnkYXF842oIl0ceFsA5pIVyDvV9Do7rIQpRtmNLK7WqJ0JdWw0+ECWnVEuoiu30PW+ZGJRJRGFoO5YEk3YUWoeYNwQfu0j73AgE5217mXrIQqmnt8z/XAoUe6IjWuNwxUw8YXxq12KNJ1wcJPLkOHOJFbO+cRP+UVpiiXlC8ckngdbyX6IYvZWpZOBZ/qpYRqHVkbXOnkkRmka7qFsU7GlFmiiQ2GV3gg4HXsCUEEqx22uQcN77IEdMj6czMWaoCsu6tGxNVq1xqAy73y7ts4LwuhlRZFmcftvc/7FwBD6qs0yq5mUA6qwp63bdW2fDBbnEub4ZpsG9w9/FAB9fQ18hrELbCp/NGBHyqhHk/Sqn7mNpE/yovh+ivB616lq877VlF0QRDd/PRSpJgCbbrobG+3rc5RZ/SbBS+Xt6VR95dJlSRKS93/kCOFZLEjvL9il98b6rpsiD5gd9A7yaKodh6r3lkyaHGHGWMKpubHVopbQL8jZxukqPXkndnjx2irdWfuxuL4pPDhwLNmAR/lwo4eWM8p1Aty6HHgGbm0L3Euzhhhia9a1fLj2gPjR9tgXmH+jkJbwj7ShB2HnbCRhfT2p0B7/ghn4RNo1yFfUpqfyBwn6xNkUU9Y4i6Y454yptG4bkiSvT3IDF7YAge6uGa4uBc9dHE96UKTRjaRcK+UJFWyB1kp/5UuUblCFyyktT8N0vQ/krSjviEhF6WOqB9h+4KfUlRKjf+HHV4s70hyzgLOT0tzSc1bv/0c8ZzxDoN8rs8RidnKDMQSd7YpAPe4f0NAsdTGinJASguAnMKJ5rFRoJwen5mwf2liMpOUR8HVAyseTvrPoZUE7xpExM7snldNYMpCA0DvIQkRhqEQvZdkf6OL0gRNxcmeQl/weVtFcRfU5ppmWZZeTR10cVS1fJX/ndzY2NjY+G3+ABZjMrTTbCXzAAAAAElFTkSuQmCC" alt=""> -->
+        <div class="profile-side-container-txt">
+          <span>welcome ,</span>
+          <span>{{userName}}</span>
+        </div>
+    </div>
+    <mat-list >  
+      <mat-list-item >
+        <span class="title">general</span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="role == 2" routerLink="gerervendeur" class="hover" (click)="changeretat('Gerer les vendeurs')"> 
+      <div >
+          <mat-icon>supervised_user_circle</mat-icon>
+          <span>Gerer les vendeurs</span> 
+        </div>
+      </mat-list-item>
+      <mat-list-item *ngIf="role == 1 || role ==2 " routerLink="gererProduct" class="hover" (click)="ManageProducs()" (click)="changeretat('Gerer les produits')"> 
+        <div >
+          <mat-icon>view_in_ar</mat-icon>
+        <span>Gerer les produits</span>
+        </div>
+         
+      </mat-list-item>
+      <mat-list-item *ngIf="role == 0" class="hover" routerLink="ma-selection" (click)="changeretat('Ma selection')"> 
+        <div>
+        <mat-icon>favorite</mat-icon>
+        <span>Ma selection </span>
+        </div>
+      </mat-list-item>
+      <mat-list-item *ngIf="role == 0" class="hover" routerLink="mes-notifications" (click)="changeretat('Mes notifications')"> 
+        <div>
+        <mat-icon>notifications_active</mat-icon>
+        <span>Mes Produits suivis  </span>
+        </div>
+      </mat-list-item>
+      
+      <mat-list-item >
+        <span class="title">profile</span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <!--  *ngIf="role == 2" -->
+      <mat-list-item  routerLink="parametre" class="hover" (click)="changeretat('Parametre de compte')">
+        <div>
+         <mat-icon>manage_accounts</mat-icon>
+        <span>Parametre de compte </span> 
+        </div>    
+      </mat-list-item>
+      <mat-list-item *ngIf="role == 1" routerLink="parametre-boutique" class="hover" (click)="changeretat('Parametre de boutique')">
+        <div>
+          <mat-icon> store_mall_directory</mat-icon>
+        <span>Parametre de boutique </span> 
+        </div>    
+      </mat-list-item>
+      <!-- <mat-list-item *ngIf="role != 2" routerLink="parametreconsommateur/ + ${email}" class="hover" (click)="changeretat('Parametre de boutique')">
+        <div>
+          <mat-icon> manage_accounts</mat-icon>
+        <span>Parametre  </span> 
+        </div>    
+      </mat-list-item> -->
+      
+      <mat-list-item class="hover"> 
+        <div (click)="logout()">
+          <mat-icon>logout</mat-icon>
+        <span>Se deconnecte </span>
+        </div>
+         
+      </mat-list-item>
+    </mat-list>  
+  </mat-sidenav>
+
+  <mat-sidenav-content >
+    <button mat-icon-button style=" background-color: white; box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.3); margin-left: 0.5rem;" (click)="side.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" *ngIf="!side.opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-icon-button style=" background-color: white; box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.3);  margin-left: 2rem;"(click)="side.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" *ngIf="side.opened">
+      <mat-icon>close</mat-icon>
+    </button> 
+      <mat-card [ngClass]="{'sidenavclosed':!side.opened , 'sidenavopened' : side.opened}">
+        <mat-card-content >
+          <router-outlet></router-outlet>
+        </mat-card-content>
+      </mat-card>    
+          
+  </mat-sidenav-content>
+</mat-sidenav-container>

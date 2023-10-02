@@ -1,0 +1,28 @@
+<div class="mt-5" class="banner">
+    <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+                <img [src]="images[0]" alt="Random first slide"  class="d-block w-100" style="height: 500px; object-fit: cover;"/>
+            </div>
+            <div class="carousel-caption">
+                <h3>Meilleur prix chez TechnoShop</h3>
+            </div>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+                <img [src]="images[1]" alt="Random second slide" class="d-block w-100" style="height: 500px; object-fit: cover;" />
+            </div>
+            <div class="carousel-caption">
+                <h3>Meilleur offre chez TechnoShop</h3>
+            </div>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+                <img [src]="images[2]" alt="Random third slide" class="d-block w-100" style="height: 500px; object-fit: cover;"/>
+            </div>
+            <div class="carousel-caption" >
+                <h3>Comparer et gagner Chez TechnoShop </h3>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>

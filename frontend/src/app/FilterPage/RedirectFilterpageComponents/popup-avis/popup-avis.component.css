@@ -1,0 +1,39 @@
+
+textarea{
+
+  padding: 0.5rem;
+  outline: none;
+  resize: none;
+  font-size: inherit; 
+
+  height: 100px;
+  max-height: 150px;
+  color: inherit;
+  background-color: transparent;
+}
+.input-group-text{
+  border: none;
+}
+.form-control{
+  /* outline: none; */
+  /* border-radius: 20px 20px 20px 20px; */
+  /* background-color: #b79eff6d; */
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.205);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+.form-control:focus{
+  border-color: rgba(0, 0, 0, 0.555);
+}
+.form-control:hover{
+  border-color: rgba(0, 0, 0, 0.555);
+  /* border: none; */
+}
+ngb-rating{
+  color: #FFC107;
+  font-size: 30px;
+}
+.avisAdd{
+  background-color: #FFC107;
+}
+

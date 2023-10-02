@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div  style="display: flex; flex-direction: row;">
+      <img style="height: 70px ;width: 100px ;" [src]="datars.imageUrl" alt="">
+      <div style="display: flex ; flex-direction: column;">
+        <p>{{datars.name}}</p>
+        <p>{{datars.price | currency: "DNT"}} </p>
+      </div>  
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <div  class="col-sm-2 col-md-2 col-lg-2" style="width: 100%;">
+      <label for="price" mat-label >Informe-moi dès que le prix atteint</label>
+      <input  id="price"matInput type="number" name="prixAttendu" [(ngModel)]="priceA" class="form-control">
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button *ngIf="!productexistinsuivreprix  && (sender==2 ||  sender==1)"   (click)="AddSuivrePrixProduit()">ajouter</button>
+    <!-- hedhi bech todhher ken sender howa el notification page ou produit est deja suivi sender==4 || produit suivi -->
+    <button mat-button *ngIf="sender==3 || productexistinsuivreprix"  (click)="UpdateSuivrePrixProduit()">Mettere a joure</button>
+    <button mat-button mat-dialog-close>annuler</button>
+  </mat-card-actions>
+</mat-card>

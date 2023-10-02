@@ -1,0 +1,168 @@
+<!-- <div class="containercard">
+
+    <img [src]="produitinfo.imgURL" alt="" class="img cardboxes" >
+
+  <div class="cardinfo " >
+
+    <p class="cardboxes"> {{produitinfo.nom}} </p>
+    <p class="cardboxes"> {{produitinfo.prix | currency :' '}} TND </p>   
+    
+    <div *ngIf="produitinfo.disponibilite" class="disponibilite cardboxes">
+      <div class="iconscontainer">
+          <svg class="boxicon disponible"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+           <path d="M248 0H208c-26.5 0-48 21.5-48 48V160c0 35.3 28.7 64 64 64H352c35.3 0 64-28.7 64-64V48c0-26.5-21.5-48-48-48H328V80c0 8.8-7.2 16-16 16H264c-8.8 0-16-7.2-16-16V0zM64 256c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H184v80c0 8.8-7.2 16-16 16H120c-8.8 0-16-7.2-16-16V256H64zM352 512H512c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H472v80c0 8.8-7.2 16-16 16H408c-8.8 0-16-7.2-16-16V256H352c-15 0-28.8 5.1-39.7 13.8c4.9 10.4 7.7 22 7.7 34.2V464c0 12.2-2.8 23.8-7.7 34.2C323.2 506.9 337 512 352 512z"/>
+          </svg>
+
+        <svg class="tickicon disponible"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 448 512">
+          <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
+        </svg>
+
+      </div>
+      
+      <span style="color: #13b616; ">En stock</span>
+    </div>
+    <div *ngIf="!produitinfo.disponibilite" class="disponibilite cardboxes">
+      <div class="iconscontainer">
+          <svg class="boxicon indisponible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <path d="M248 0H208c-26.5 0-48 21.5-48 48V160c0 35.3 28.7 64 64 64H352c35.3 0 64-28.7 64-64V48c0-26.5-21.5-48-48-48H328V80c0 8.8-7.2 16-16 16H264c-8.8 0-16-7.2-16-16V0zM64 256c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H184v80c0 8.8-7.2 16-16 16H120c-8.8 0-16-7.2-16-16V256H64zM352 512H512c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H472v80c0 8.8-7.2 16-16 16H408c-8.8 0-16-7.2-16-16V256H352c-15 0-28.8 5.1-39.7 13.8c4.9 10.4 7.7 22 7.7 34.2V464c0 12.2-2.8 23.8-7.7 34.2C323.2 506.9 337 512 352 512z"/>
+          </svg>
+          <svg class="tickicon indisponible" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 384 512">
+            <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/>
+          </svg>
+
+      </div>
+      
+      <span style="color: #e62929; ">Hors stock</span>
+    </div>      
+    <p class="cardboxes"> {{produitinfo.productowner.nomboutique}} </p>
+    <a class="voiroffre cardboxes" href="https://primini.tn/c/p/149472/Fer-A-Repasser-Copper-Express-Russell-Hobbs-23975-56-2600w"> <span>voire offre</span> <mat-icon class="">keyboard_arrow_right</mat-icon></a>
+  </div>
+
+
+</div>
+
+<div class="testcardcontainer">
+
+  <div class="testimgcontainer">
+
+  </div>
+  <div class="testinfocontainer">
+    <div class="testinfoelements"></div>
+    <div class="testinfoelements"></div>
+    <div class="testinfoelements"></div>
+    <div class="testinfoelements"></div>
+    <div class="testinfoelements"></div>
+  </div>
+</div>
+
+
+<div class="testcardcontainer">
+
+  <div class="testimgcontainer">
+
+  </div>
+  <div class="testinfocontainer">
+    <div style="background-color: gray;" >
+      ghaya
+    </div>
+    <div style="background-color: gray;" >
+      ghaya
+    </div>
+    <div style="background-color: gray;" >
+      ghaya
+    </div>
+    <div style="background-color: gray;" >
+      ghaya
+    </div>
+    <div style="background-color: gray;" >
+      ghaya
+    </div>
+  </div>
+</div> -->
+
+
+<div *ngIf="!senderisNotifications" class="containercard">
+  <!-- prduct image  -->
+  <!-- <div> -->
+    <img [src]="produitinfo.imageUrl" alt="" class="img " >
+  <!-- </div> -->
+  <!-- product informations  -->
+  <div class="cardinfo " >
+    <!-- <div style="width: 200px; height: 100px; background-color: gr;"></div> -->
+
+    <p class=" dataText pname"> {{produitinfo.name}} </p>
+    <p class=" dataText"> {{produitinfo.price | currency :' '}} DT </p>   
+    <!-- <p *ngIf="produitinfo.disponibilite">En stock </p> 
+    <p *ngIf="!produitinfo.disponibilite">Hors stock </p>  -->
+     
+    <p class=" dataText"> {{produitinfo.nomFournisseur}} </p>
+<!--En stock   -->
+    <div *ngIf="produitinfo.disponibilite" class="disponibilite ">
+      <div class="iconscontainer">
+          <svg class="boxicon disponible"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M248 0H208c-26.5 0-48 21.5-48 48V160c0 35.3 28.7 64 64 64H352c35.3 0 64-28.7 64-64V48c0-26.5-21.5-48-48-48H328V80c0 8.8-7.2 16-16 16H264c-8.8 0-16-7.2-16-16V0zM64 256c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H184v80c0 8.8-7.2 16-16 16H120c-8.8 0-16-7.2-16-16V256H64zM352 512H512c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H472v80c0 8.8-7.2 16-16 16H408c-8.8 0-16-7.2-16-16V256H352c-15 0-28.8 5.1-39.7 13.8c4.9 10.4 7.7 22 7.7 34.2V464c0 12.2-2.8 23.8-7.7 34.2C323.2 506.9 337 512 352 512z"/>
+          </svg>
+
+        <svg class="tickicon disponible"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 448 512">
+          <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
+        </svg>
+
+      </div>
+      
+      <span class="enstockt">En stock</span>
+    </div>
+<!-- hors stock  -->
+    <div *ngIf="!produitinfo.disponibilite" class="disponibilite ">
+      <div class="iconscontainer">
+          <svg class="boxicon indisponible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M248 0H208c-26.5 0-48 21.5-48 48V160c0 35.3 28.7 64 64 64H352c35.3 0 64-28.7 64-64V48c0-26.5-21.5-48-48-48H328V80c0 8.8-7.2 16-16 16H264c-8.8 0-16-7.2-16-16V0zM64 256c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H184v80c0 8.8-7.2 16-16 16H120c-8.8 0-16-7.2-16-16V256H64zM352 512H512c35.3 0 64-28.7 64-64V320c0-35.3-28.7-64-64-64H472v80c0 8.8-7.2 16-16 16H408c-8.8 0-16-7.2-16-16V256H352c-15 0-28.8 5.1-39.7 13.8c4.9 10.4 7.7 22 7.7 34.2V464c0 12.2-2.8 23.8-7.7 34.2C323.2 506.9 337 512 352 512z"/>
+          </svg>
+          <svg class="tickicon indisponible" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 384 512">
+            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/>
+          </svg>
+
+      </div>
+      
+      <span  class="horsstockt">Hors stock</span>
+    </div>     
+    <a class="voiroffre"  [href]="produitinfo.urls" target="_blank"> 
+      <span class="fontweight ">voire offre</span> <mat-icon class="display">keyboard_arrow_right</mat-icon>
+    </a>
+    <!-- <mat-icon>inbox</mat-icon> -->
+  </div>
+
+
+</div>
+<div *ngIf="senderisNotifications" class="suivrePrix">
+  <div style="display: flex; flex-direction: row ; align-items: center; gap: 0.5rem;">
+    <img [src]="produitinfo.product.imageUrl" alt="" class="img " >
+
+    <p class=" dataText pname"> {{produitinfo.product.name}} </p>
+  </div>
+    
+
+  <div class="cardinfo " >
+    <p class=" dataText"> {{produitinfo.product.price | currency :' '}} DT </p>  
+    <p class=" dataText"> {{produitinfo.prixAttendu | currency :' '}} DT </p>  
+    <div class="favorite" >
+      <button  mat-icon-button color="primary"  [matMenuTriggerFor]="deleteupdateprce">
+        <mat-icon style="color:blueviolet" >more_vert</mat-icon>
+      </button>
+    </div>  
+
+    
+  </div>
+
+
+</div>
+<mat-menu #deleteupdateprce="matMenu" xPosition="before">
+  <div mat-menu-item  (click)="openDialog(produitinfo.product)" >
+    <mat-icon >edit</mat-icon>
+    <p class="menuitem" >Modifier prix attendu</p>
+  </div>
+  <div mat-menu-item (click)="Delete()" >
+    <mat-icon >delete</mat-icon>
+    <p  class="menuitem" > Supprimer le produit</p>
+  </div>
+</mat-menu>
+
